@@ -22,4 +22,4 @@ All you need to configure is given url above. Just get an access_token from Inst
 
 ##Screen Shots
 
-![View Screen Shot](http://cl.ly/image/0i2O3S1M4117)
+![View Screen Shot](https://github.com/s/MomentCard/blob/master/static/ss.png)
