@@ -10,6 +10,7 @@ Then generates the html file.
 ##Installation and Run
 
 ```
+$ pip install Flask
 $ git clone git://github.com/s/MomentCard.git ~/MomentCard
 $ cd ~/MomentCard
 $ python app.py
