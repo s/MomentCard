@@ -19,8 +19,8 @@ Then open the url in your browser:
 <code>http://localhost:1105/generate?access_token=access_token&photo_url=url</code>
 
 Example parameters:<br/>
-access_token:XXXXXXXXX.XXXXXX.XXXXXXXXXXXXXXXXXXXXXX<br/>
-photo_url:http://instagram.com/p/gWUeJnn0t3/
+access_token:	XXXXXXXXX.XXXXXX.XXXXXXXXXXXXXXXXXXXXXX<br/>
+photo_url:		instagram.com/p/gWUeJnn0t3/
 
 All you need to configure is given url above. Just get an access_token from Instagram API and start creating cards.
 
