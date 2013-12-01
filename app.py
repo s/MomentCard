@@ -45,11 +45,15 @@ def generate():
 
 	photo_data = json.loads(api.run())
 
-	if photo_data:	
+	if photo_data:
 		photo_data["data"]["caption"]["created_time"] = datetime.datetime.fromtimestamp(int(photo_data["data"]["caption"]["created_time"])).strftime('%d %b %Y')
 		return render_template("generate.html",all_info=photo_data)
 	else:
-		return 'Not at all'
+		response.update({
+			'err':"1",
+			'msg':"Photo could not been fetched."
+		})
+		return response
 
 
 def reply(response):
