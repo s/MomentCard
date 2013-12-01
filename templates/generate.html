@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../static/css/generate.css">
+		<link rel="stylesheet" type="text/css" href="../static/css/font-awesome.min.css">
+		<link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+		<title>MomentCard</title>
+	</head>
+
+	<body>
+		<ul class="MomentCard">
+			
+			<li>				
+				<div class="MomentCard_photo">
+					<img 
+						src="{{all_info["data"]["images"]["standard_resolution"]["url"]}}"
+						width="200"
+					/>
+				</div>
+			</li>
+
+			<li class="MomentCard_right">
+
+				<div class="MomentCard_right_head">
+					
+					<a 
+						href="http://instagram.com/{{all_info["data"]["user"]["username"]}}"
+						target="_blank"
+					>
+						<img
+							src="{{all_info["data"]["user"]["profile_picture"]}}"
+							width="30"
+							class="MomentCard_user_photo"
+						/>
+					</a>					
+
+					<a 
+						href="http://instagram.com/{{all_info["data"]["user"]["username"]}}"
+						target="_blank"
+					>
+
+						<div class="MomentCard_user_name">						
+							{{all_info["data"]["user"]["username"]}}
+						</div>
+					</a>
+
+
+					<a
+						href="{{all_info["data"]["link"]}}"
+						target="_blank"
+					>
+
+						<div class="MomentCard_date">
+							{{all_info["data"]["caption"]["created_time"]}}
+						</div>
+					</a>
+				</div>
+
+				<div class="MomentCard_caption">
+					{{all_info["data"]["caption"]["text"]}}
+				</div>
+
+				<div class="divider"></div>
+
+				<div class="MomentCard_likes">
+
+					<i class="fa fa-heart"></i>
+
+					<div class="MomentCard_likes_count">
+						{{all_info["data"]["likes"]["count"]}} people likes this.
+					</div>
+				</div>
+
+			</li>
+
+		</ul>
+	</body>
+</html>
