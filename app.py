@@ -14,11 +14,10 @@ import datetime
 
 app = Flask(__name__)
 
+response = {}
 
 @app.route('/generate',methods=['GET'])
-def generate():
-
-	response = {}
+def generate():	
 
 	params = []
 
@@ -30,8 +29,8 @@ def generate():
 		
 		if len(param) <= 0:
 			response.update({
-				'err':"1",
-				'msg':e + ' is required for this method'
+				"err":"1",
+				"msg":e + ' is required for this method'
 			})
 
 			return reply(response)
@@ -46,14 +45,26 @@ def generate():
 	photo_data = json.loads(api.run())
 
 	if photo_data:
-		photo_data["data"]["caption"]["created_time"] = datetime.datetime.fromtimestamp(int(photo_data["data"]["caption"]["created_time"])).strftime('%d %b %Y')
+		try:
+			photo_data["data"]["caption"]["created_time"] = datetime.datetime.fromtimestamp(int(photo_data["data"]["caption"]["created_time"])).strftime('%d %b %Y')
+		except:
+			pass
 		return render_template("generate.html",all_info=photo_data)
 	else:
 		response.update({
-			'err':"1",
-			'msg':"Photo could not been fetched."
+			"err":"1",
+			"msg":"Photo could not been fetched."
 		})
-		return response
+		return reply(response)
+
+@app.errorhandler(404)
+def not_found(e):
+	response.update({
+		"err":"1",
+		"msg":"Specified url not found on the server."
+	})
+
+	return reply(response), 404
 
 
 def reply(response):
