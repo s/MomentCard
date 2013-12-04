@@ -12,10 +12,15 @@
 			
 			<li>				
 				<div class="MomentCard_photo">
-					<img 
-						src="{{all_info["data"]["images"]["standard_resolution"]["url"]}}"
-						width="200"
-					/>
+					<a
+						href="{{all_info["data"]["images"]["standard_resolution"]["url"]}}"
+						target="_blank"
+					>
+						<img 
+							src="{{all_info["data"]["images"]["low_resolution"]["url"]}}"
+							width="200"
+						/>
+					</a>
 				</div>
 			</li>
 
@@ -51,7 +56,7 @@
 					>
 
 						<div class="MomentCard_date">
-							{{all_info["data"]["caption"]["created_time"]}}
+							{{all_info["data"]["created_time"]}}
 						</div>
 					</a>
 				</div>

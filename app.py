@@ -45,8 +45,9 @@ def generate():
 	photo_data = json.loads(api.run())
 
 	if photo_data:
+		
 		try:
-			photo_data["data"]["caption"]["created_time"] = datetime.datetime.fromtimestamp(int(photo_data["data"]["caption"]["created_time"])).strftime('%d %b %Y')
+			photo_data["data"]["created_time"] = datetime.datetime.fromtimestamp(int(photo_data["data"]["created_time"])).strftime('%d %b %Y')
 		except:
 			pass
 		return render_template("generate.html",all_info=photo_data)

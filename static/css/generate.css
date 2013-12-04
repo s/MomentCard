@@ -75,7 +75,7 @@ body{
 .MomentCard_right_head{
 	height: 30px;
 	margin-bottom: 10px;
-	font-size: 14px;
+	font-size: 13px;
 }
 .MomentCard_user_name:before{
 	content: '@';
